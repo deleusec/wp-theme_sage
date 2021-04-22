@@ -1,12 +1,17 @@
 body {
     width: 100%;
     min-height: 100vh;
+    padding: 0 0 0 300px;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+
+    position: relative;
+    overflow: hidden;
     
     background-color: #242429;
 }

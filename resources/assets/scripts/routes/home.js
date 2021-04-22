@@ -12,15 +12,15 @@ export default {
  */
 const canvas = document.querySelector('.webgl')
 const sizes = {}
-canvas.width = 1000
-canvas.height = 500
+canvas.width = 100*((window.innerWidth-325)/100)
+canvas.height = 100*(window.innerHeight/100)
 sizes.width = canvas.clientWidth
 sizes.height = canvas.clientHeight
 
 window.addEventListener('resize', () =>
 {
-    canvas.width = 50*(window.innerWidth/100)
-    canvas.height = 50*(window.innerHeight/100)
+    canvas.width = (100*(window.innerWidth/100))-325
+    canvas.height = 100*(window.innerHeight/100)
     // Save sizes
     sizes.width = canvas.width
     sizes.height = canvas.height
