@@ -1,3 +1,7 @@
 @extends('layouts.app')
 
-<?php echo the_content(); ?>
+@section('content')
+    <section class="page-contact" id="contact">
+        {{{ the_content() }}}
+    </section>
+@endsection

@@ -3,10 +3,23 @@
     min-height: 100%;
 
     h2 {
+        height: 30px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
         color: white;
         font-family: Uni Neue;
         font-weight: 500;
-        font-size: 1.5em;
+        font-size: 1.6em;
+
+        img {
+            height: 100%;
+            width: auto;
+            margin: 0 10px 0 0 ;
+        }
     }
     p {
         color: white;
@@ -16,20 +29,4 @@
     }
 }
     
-.bloc_item {
-width: 500px;
-height: 300px;
 
-border-radius: 50px;
-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
-
-background-color: #1F1F24;
-
-    img {
-        width: 500px;
-        height: 100%;  
-        border-radius: 50px; 
-        object-fit: cover;
-        object-position: top center;
-    }
-}

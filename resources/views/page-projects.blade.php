@@ -5,7 +5,7 @@
 
     @while(have_posts()) @php the_post() @endphp
     
-    <h2>{{ the_title() }}</h2>
+    <h2><img src="@asset('images/icon-rule.svg')" alt="">{{ the_title() }}</h2>
     <p>{{ the_content() }}</p>
 
         @php
