@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 
 export default {
@@ -12,15 +13,15 @@ export default {
  */
 const canvas = document.querySelector('.webgl')
 const sizes = {}
-canvas.width = 100*((window.innerWidth-325)/100)
-canvas.height = 100*(window.innerHeight/100)
-sizes.width = canvas.clientWidth
-sizes.height = canvas.clientHeight
+canvas.width = window.innerWidth-300
+canvas.height = window.innerHeight
+sizes.width = canvas.width
+sizes.height = canvas.height
 
 window.addEventListener('resize', () =>
 {
-    canvas.width = (100*(window.innerWidth/100))-325
-    canvas.height = 100*(window.innerHeight/100)
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
     // Save sizes
     sizes.width = canvas.width
     sizes.height = canvas.height
@@ -49,20 +50,39 @@ scene.add(camera)
 
 // Logo
 const logoLoader = new GLTFLoader()
-let logo = null;
+// let logo = null;
 logoLoader.load(
     window.wp_object.url,
     function ( gltf ) {
-        logo = gltf.scene
+        // logo = gltf.scene
         console.log(gltf.scene)
         scene.add(gltf.scene);
     }
 )
+/**
+ * Mousemove
+ */
+const cursor = {
+    x: 0,
+    y: 0,
+};
+ 
+window.addEventListener('mousemove', (event) => {
+    cursor.x = event.clientX / canvas.width - 0.5
+    cursor.y = event.clientY / canvas.height - 0.5
+    console.log(cursor.x)
+});
 
 // Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enabled = false
-
+const controls = new OrbitControls(camera, canvas)
+controls.autoRotate = true
+controls.autoRotateSpeed = 3
+controls.enableZoom = false
+controls.enableDamping = false
+controls.enableKeys = false
+controls.enablePan = false
+controls.rotateSpeed = 1
+console.log(controls)
 
 // Axes Helper
 // const axesHelper = new THREE.AxesHelper()
@@ -88,42 +108,15 @@ renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(sizes.width, sizes.height)
 renderer.setClearColor( 0x181818, 0 ); // the default
 
-/**
- * Mousemove
- */
-const cursor = {
-    x: 0,
-    y: 0,
-};
 
-window.addEventListener('mousemove', (event) => {
-    cursor.x = event.clientX / sizes.width - 0.5
-    cursor.y = event.clientY / sizes.height - 0.5
-});
-
-let rotate = false
 
 /**
  * Loop
  */
 const animate = () =>
 {
-    if(logo !== null) {
-        canvas.addEventListener( 'mousedown', () => { 
-            rotate = true 
-        })
-        canvas.addEventListener( 'mouseup', () => { 
-            rotate = false
-        })
-        canvas.addEventListener( 'mouseout', () => { 
-            rotate = false
-        })
-        if( rotate == true) {
-            logo.rotation.y += Math.sin(cursor.x * Math.PI * 0.05) * 3
-        } else {
-            logo.rotation.y += Math.PI * 0.005
-        }
-    }
+    // Controls update
+    controls.update()
  
     // Render
     renderer.render(scene, camera)
