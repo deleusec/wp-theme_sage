@@ -20,9 +20,8 @@
             $the_query = new \WP_QUERY($args)
         @endphp
 
-        @while ($the_query->have_posts()) 
-            @php 
-                $the_query->the_post();
+        @while ($the_query->have_posts()) @php $the_query->the_post();
+
                     
                 $image = get_field('image_project');
                 
