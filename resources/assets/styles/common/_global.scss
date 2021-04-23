@@ -18,9 +18,12 @@ body {
     .main {
         width: 100%;
         min-height: 100%;
-        padding: 50px;
-        box-sizing: border-box;
         overflow-y: auto;
+ 
+        hr {
+            border-color: #3D3D3D;
+            margin: 0 0 50px;
+        }
 
         .title {
             height: 30px;

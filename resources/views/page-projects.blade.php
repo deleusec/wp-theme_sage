@@ -2,6 +2,7 @@
 
 @section('content')
 <section class="page-projects" id="projects">
+    <hr>
 
     @while(have_posts()) @php the_post() @endphp
     
