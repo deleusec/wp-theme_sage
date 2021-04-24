@@ -20,7 +20,7 @@ sizes.height = canvas.height
 
 window.addEventListener('resize', () =>
 {
-    canvas.width = window.innerWidth
+    canvas.width = window.innerWidth-300
     canvas.height = window.innerHeight
     // Save sizes
     sizes.width = canvas.width
@@ -50,28 +50,13 @@ scene.add(camera)
 
 // Logo
 const logoLoader = new GLTFLoader()
-// let logo = null;
 logoLoader.load(
     window.wp_object.url,
     function ( gltf ) {
-        // logo = gltf.scene
-        console.log(gltf.scene)
         scene.add(gltf.scene);
     }
 )
-/**
- * Mousemove
- */
-const cursor = {
-    x: 0,
-    y: 0,
-};
- 
-window.addEventListener('mousemove', (event) => {
-    cursor.x = event.clientX / canvas.width - 0.5
-    cursor.y = event.clientY / canvas.height - 0.5
-    console.log(cursor.x)
-});
+
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
@@ -82,11 +67,6 @@ controls.enableDamping = false
 controls.enableKeys = false
 controls.enablePan = false
 controls.rotateSpeed = 1
-console.log(controls)
-
-// Axes Helper
-// const axesHelper = new THREE.AxesHelper()
-// scene.add(axesHelper)
 
 
 // Lights
