@@ -15,9 +15,13 @@ $image = get_field('image');
         <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}">
 
         <h2>{{ the_field('firstname')}} {{ the_field('name')}}</h2>
-        <p>Age: {{ the_field('age')}} ans</p>
-        <p>Date of birth: {{ the_field('date_of_birth')}}</p>
-        <p>{{ the_field('text')}}</p>
+        <ul>
+            <li>Age: <span>{{ the_field('age')}} ans</span></li>
+            <li>Date of birth: <span>{{ the_field('date_of_birth')}}</span></li>
+            <li>Phone: <span>{{ the_field('phone')}}</span></li>
+            <li>Email: <span>{{ the_field('email')}}</span></li>
+        </ul>
+        <p class="textarea">{{ the_field('text')}}</p>
     </div>
 
 
