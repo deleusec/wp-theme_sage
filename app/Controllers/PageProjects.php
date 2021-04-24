@@ -24,16 +24,15 @@ class PageProjects extends Controller
                 
                 $url = $image['url'];
                 $alt = $image['alt'];
-                $title = $image['title'];
 
                 
                 $name = get_field('name', $project);
 
             return(object)[
                 'url' => $url,
-                'title' => $title,
                 'alt' => $alt,
-                'name' => $name
+                'name' => $name,
+                'permalink' => get_post_permalink($project)
             ];
             }, $the_query->posts);
 
