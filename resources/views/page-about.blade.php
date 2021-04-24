@@ -16,7 +16,7 @@ $image = get_field('image');
 
         <h2>{{ the_field('firstname')}} {{ the_field('name')}}</h2>
         <ul>
-            <li>Age: <span>{{ the_field('age')}} ans</span></li>
+            <li>Age: <span>{{ the_field('age')}} years old</span></li>
             <li>Date of birth: <span>{{ the_field('date_of_birth')}}</span></li>
             <li>Phone: <span>{{ the_field('phone')}}</span></li>
             <li>Email: <span>{{ the_field('email')}}</span></li>
