@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/app/themes/deleusec",
+  "publicPath": "/wp-content/themes/deleusec",
   "devUrl": "http://corentin.local",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

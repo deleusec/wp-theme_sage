@@ -1,3 +1,7 @@
+{{--
+  Template Name: Projects
+--}}
+
 @extends('layouts.app')
 
 @section('content')
@@ -8,7 +12,6 @@
 
 <div class="all_projects">
 @foreach ($projects as $project)
-{{dd($project->permalink)}}
         <a href="{{ $project->permalink }}" class="bloc_item">
             <img src="{{ $project->url }}" alt="{{ $project->$alt }}">
         </a>

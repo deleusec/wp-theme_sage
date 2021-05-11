@@ -76,6 +76,30 @@
         .current_page_item a {
             color: white;
         }
+
+        .current_page_item ::before{
+            content: "";
+            width: 20px;
+            height: 20px;
+            margin: 0 10px 0 0;
+            background-position: center;
+            background-size: contain;
+        }
+
+        #menu-item-39 ::before{
+            background: url(../images/home.svg) no-repeat;
+        }
+        #menu-item-37 ::before{
+            background: url(../images/work.svg) no-repeat;
+        }
+        #menu-item-34 ::before{
+            background: url(../images/person.svg) no-repeat;
+        }
+        #menu-item-35 ::before{
+            background: url(../images/mail.svg) no-repeat;
+        }
+        
+        
         .current_page_item ::after {
             content: "";
             width: 4px;
