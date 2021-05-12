@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-single-'.get_post_type())
-    coucou
-  @endwhile
+<section class="single-project" id="single">
+
+  <hr>
+
+  <h2>{{ $project->name }}</h2>
+  <p>{{ $project->description }}</p>
+  <a href="{{ $project->url }}">{{ $project->url }}</a>
+</section>
 @endsection

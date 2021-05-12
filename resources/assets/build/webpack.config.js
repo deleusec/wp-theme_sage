@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; // eslint-disable-line
 
 const webpack = require('webpack');
 const merge = require('webpack-merge');
@@ -100,7 +100,7 @@ let webpackConfig = {
         }),
       },
       {
-        test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico|glb)$/,
+        test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
         include: config.paths.assets,
         loader: 'url',
         options: {
@@ -109,7 +109,7 @@ let webpackConfig = {
         },
       },
       {
-        test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico|glb)$/,
+        test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
         include: /node_modules/,
         loader: 'url',
         options: {
