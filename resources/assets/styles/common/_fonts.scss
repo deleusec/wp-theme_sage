@@ -1,41 +1,14 @@
 @font-face {
-    font-family: Uni Neue;
-    font-size: normal;
-    font-weight: 900;
-    src: url("/fonts/UniNeueBlack.otf") format(otf);
+    font-family: 'Uni Neue Regular';
+    src: url("../fonts/UniNeueRegular.woff") format(woff);
 }
 
 @font-face {
-    font-family: Uni Neue;
-    font-size: normal;
-    font-weight: 800;
-    src: url("/fonts/UniNeueHeavy.otf") format(otf);
+    font-family: 'Uni Neue Book';
+    src: url("../fonts/UniNeueBook.woff") format(woff);
 }
 
-@font-face {
-    font-family: Uni Neue;
-    font-size: normal;
-    font-weight: 700;
-    src: url("/fonts/UniNeueBold.otf") format(otf);
-}
 
-@font-face {
-    font-family: Uni Neue;
-    font-size: normal;
-    font-weight: 500;
-    src: url("/fonts/UniNeueRegular.otf") format(otf);
-}
 
-@font-face {
-    font-family: Uni Neue;
-    font-size: normal;
-    font-weight: 400;
-    src: url("/fonts/UniNeueBook.otf") format(otf);
-}
-
-@font-face {
-    font-family: Uni Neue;
-    font-size: normal;
-    font-weight: 300;
-    src: url("/fonts/UniNeueLight.otf") format(otf);
-}
+$regular : 'Uni Neue Regular', sans-serif;
+$book : 'Uni Neue Book', sans-serif;
